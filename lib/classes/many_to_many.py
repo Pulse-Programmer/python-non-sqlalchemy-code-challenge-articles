@@ -94,7 +94,7 @@ class Magazine:
 
     def contributing_authors(self):
         authors = (set(article.author for article in self.articles()))
-        moreThanTwoArticles = [author for author in authors if sum(1 for art in self.articles() if art.author == author) > 2]
+        moreThanTwoArticles = [author for author in authors if sum(1 for article in self.articles() if article.author == author) > 2]
         if len(moreThanTwoArticles) == 0:
             return None
         else:
