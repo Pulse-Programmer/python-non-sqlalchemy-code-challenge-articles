@@ -15,10 +15,10 @@ class Article:
    
     @title.setter
     def title(self, title):
-       if type(title) in (str,) and (5<=len(title)<=50) and (hasattr(self,"title")==False):
+       if type(title) in (str,) and (5<=len(title)<=50) and (hasattr(self, title)==False):
            self._title = title
-       else:
-           raise Exception("Invalid title")
+    #    else:
+    #        raise Exception("Invalid title")
  
    
 class Author:
@@ -32,10 +32,10 @@ class Author:
     
     @name.setter
     def name(self, name):
-        if type(name) in (str,) and (len(name)>0) and (hasattr(self,"name")==False):
+        if type(name) in (str,) and (len(name)>0) and (hasattr(self, "name")==False):
             self._name = name
-        else:
-            raise Exception("Invalid name")
+        # else:
+        #     raise Exception("Invalid name")
     
     def articles(self):
         return [article for article in Article.all if article.author == self]
@@ -70,8 +70,8 @@ class Magazine:
     def name(self, name):
         if type(name) in (str,) and (2<=len(name)<=16):
             self._name = name
-        else:
-            raise Exception("Invalid name")
+        # else:
+        #     raise Exception("Invalid name")
             
     
     @property
@@ -83,8 +83,8 @@ class Magazine:
     def category(self, category):
         if type(category) in (str,) and len(category)>0:
             self._category = category
-        else:
-            raise Exception("Invalid category")
+        # else:
+        #     raise Exception("Invalid category")
         
     def articles(self):
         return [article for article in Article.all if article.magazine == self]
