@@ -32,7 +32,7 @@ class Author:
     
     @name.setter
     def name(self, name):
-        if type(name) in (str,) and (len(name)>0) and (hasattr(self, "name")==False):
+        if type(name) in (str,) and (len(name)) and (hasattr(self, "name")==False):
             self._name = name
         # else:
         #     raise Exception("Invalid name")
